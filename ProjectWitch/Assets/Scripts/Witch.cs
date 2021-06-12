@@ -10,6 +10,7 @@ public class Witch : MonoBehaviour
     Vector3Int current;
   //  Vector3Int direction;
     bool readyToMove;
+   // public AudioClip BonusSound;
 
     // Start is called before the first frame update
     void Awake()
@@ -21,7 +22,7 @@ public class Witch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target, 0.05f);
+        transform.position = Vector3.MoveTowards(transform.position, target, 0.1f);
 
         if (Vector3.Distance(transform.position, target) == 0f)
         {
@@ -62,40 +63,22 @@ public class Witch : MonoBehaviour
         {
 
 
-            //if (target.x != 0)
-            //{
-            //    target.x = 1;
-            //}
+         
 
 
             target = current;
 
 
-            //if(target.z== current.z)
-            //{
-            //    
-            //}
-
+           
             target.z += 1;
 
 
-            // target.x = 0;
+           
             if (!World.instance.Blocks.ContainsKey(new Vector2Int(target.x, target.z)) || (World.instance.Blocks[new Vector2Int(target.x, target.z)] != null && !World.instance.Blocks[new Vector2Int(target.x, target.z)].IsPassable))
             {
                 target = current;
             }
         }
-
-
-
-        //if (!World.instance.Blocks.ContainsKey(new Vector2Int(target.x, target.z)) || (World.instance.Blocks[new Vector2Int(target.x, target.z)] != null && !World.instance.Blocks[new Vector2Int(target.x, target.z)].IsPassable))
-        //{
-           
-        //}
-
-
-
-
     }
 
 }
