@@ -128,6 +128,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 24719946, guid: c44200bcb2abe644b8122f91b6d7a997, type: 3}
+      propertyPath: BurnTheWitch
+      value: 
+      objectReference: {fileID: 4560229334147752639, guid: 82c79fa0638fe2a4498fe051c35eca50,
+        type: 3}
     - target: {fileID: 1918429788235536686, guid: c44200bcb2abe644b8122f91b6d7a997,
         type: 3}
       propertyPath: m_Name
@@ -240,6 +245,7 @@ MonoBehaviour:
   GameOverPanel: {fileID: 2134580730}
   Timer: 0
   TimerText: {fileID: 1248683215}
+  GameOverSound: {fileID: 8300000, guid: 39d1ec3b5d7722844b395b9b66160574, type: 3}
 --- !u!4 &405578340
 Transform:
   m_ObjectHideFlags: 0
@@ -640,6 +646,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 24719946, guid: c44200bcb2abe644b8122f91b6d7a997, type: 3}
+      propertyPath: BurnTheWitch
+      value: 
+      objectReference: {fileID: 4560229334147752639, guid: 82c79fa0638fe2a4498fe051c35eca50,
+        type: 3}
     - target: {fileID: 893474711, guid: c44200bcb2abe644b8122f91b6d7a997, type: 3}
       propertyPath: m_RootOrder
       value: 10

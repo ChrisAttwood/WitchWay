@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public int Timer;
     public TMP_Text TimerText;
     float speed;
+    public AudioClip GameOverSound;
     
 
     private void Awake()
@@ -55,6 +56,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        AudioSource.PlayClipAtPoint(GameOverSound, Camera.main.transform.position);
         IsGameOver = true;
         GameOverPanel.SetActive(true);
     }

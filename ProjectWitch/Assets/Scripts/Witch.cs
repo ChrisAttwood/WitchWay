@@ -8,6 +8,7 @@ public class Witch : MonoBehaviour
     float Yvelocity;
     Vector3Int target;
     Vector3Int current;
+    public GameObject BurnTheWitch;
   //  Vector3Int direction;
     bool readyToMove;
    // public AudioClip BonusSound;
@@ -56,6 +57,9 @@ public class Witch : MonoBehaviour
 
         if(World.instance.Blocks.ContainsKey(new Vector2Int(target.x, target.z)) && World.instance.Blocks[new Vector2Int(target.x, target.z)] != null && World.instance.Blocks[new Vector2Int(target.x, target.z)].IsKiller)
         {
+            var btw = Instantiate(BurnTheWitch, transform);
+            btw.transform.localPosition = Vector3.zero;
+
             GameManager.instance.GameOver();
         }
 
