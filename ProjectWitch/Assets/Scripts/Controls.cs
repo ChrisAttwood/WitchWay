@@ -21,7 +21,7 @@ public class Controls : MonoBehaviour
 
         float Vertical = Input.GetAxis("Vertical");
         float Horizontal = Input.GetAxis("Horizontal");
-        Vertical += 0.1f;
+      //  Vertical += 0.1f;
         WitchLeft.Move(Horizontal, Vertical);
         WitchRight.Move(Horizontal, Vertical);
     }

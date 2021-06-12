@@ -6,6 +6,7 @@ public class Block : MonoBehaviour
 {
 
     public bool IsPassable;
+    public bool IsKiller;
 
     // Start is called before the first frame update
     void Start()

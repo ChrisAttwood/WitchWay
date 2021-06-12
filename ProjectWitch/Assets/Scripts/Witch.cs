@@ -8,7 +8,7 @@ public class Witch : MonoBehaviour
     float Yvelocity;
     Vector3Int target;
     Vector3Int current;
-    Vector3Int direction;
+  //  Vector3Int direction;
     bool readyToMove;
 
     // Start is called before the first frame update
@@ -33,25 +33,27 @@ public class Witch : MonoBehaviour
 
     public void Move(float Horizontal, float Vertical)
     {
+        if (GameManager.instance.IsGameOver) return;
+
         if (!readyToMove) return;
 
         current = target;
 
         readyToMove = false;
-
-        if (Mathf.Abs(Vertical) > Mathf.Abs(Horizontal) && Mathf.Abs(Vertical) >= Yvelocity)
+        target.z += 1;
+        //  if (Mathf.Abs(Vertical) > Mathf.Abs(Horizontal) && Mathf.Abs(Vertical) >= Yvelocity)
         {
-            if (Vertical < 0)
-            {
-                target.z -= 1;
-            }
+            //if (Vertical < 0)
+            //{
+            //    target.z -= 1;
+            //}
 
-            if (Vertical > 0)
-            {
-                target.z += 1;
-            }
+            //if (Vertical > 0)
+            //{
+            //    target.z += 2;
+            //}
         }
-        if (Mathf.Abs(Horizontal) > Mathf.Abs(Vertical) && Mathf.Abs(Horizontal) >= Xvelocity)
+       // if (Mathf.Abs(Horizontal) > Mathf.Abs(Vertical) && Mathf.Abs(Horizontal) >= Xvelocity)
         {
 
             if (Horizontal < 0)
@@ -65,17 +67,25 @@ public class Witch : MonoBehaviour
             }
         }
 
-        Yvelocity = Mathf.Abs(Vertical);
-        Xvelocity = Mathf.Abs(Horizontal);
-        direction = target - current;
+        if(World.instance.Blocks.ContainsKey(new Vector2Int(target.x, target.z)) && World.instance.Blocks[new Vector2Int(target.x, target.z)] != null && World.instance.Blocks[new Vector2Int(target.x, target.z)].IsKiller)
+        {
+            GameManager.instance.GameOver();
+        }
 
-
-        if (!World.instance.Blocks.ContainsKey(new Vector2Int(target.x, target.z)) || (World.instance.Blocks[new Vector2Int(target.x, target.z)] != null  &&  !World.instance.Blocks[new Vector2Int(target.x, target.z)].IsPassable) || Vector3.Distance(transform.position, target) > 1f)
+        //Yvelocity = Mathf.Abs(Vertical);
+        //Xvelocity = Mathf.Abs(Horizontal);
+        // direction = target - current;
+        if (!World.instance.Blocks.ContainsKey(new Vector2Int(target.x, target.z)) || (World.instance.Blocks[new Vector2Int(target.x, target.z)] != null && !World.instance.Blocks[new Vector2Int(target.x, target.z)].IsPassable))
         {
             target = current;
-
-
         }
+
+        //if (!World.instance.Blocks.ContainsKey(new Vector2Int(target.x, target.z)) || (World.instance.Blocks[new Vector2Int(target.x, target.z)] != null  &&  !World.instance.Blocks[new Vector2Int(target.x, target.z)].IsPassable) || Vector3.Distance(transform.position, target) > 1f)
+        //{
+        //    target = current;
+
+
+        //}
 
 
     }
