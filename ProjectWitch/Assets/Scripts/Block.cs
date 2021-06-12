@@ -9,6 +9,8 @@ public class Block : MonoBehaviour
     public bool IsKiller;
     public bool IsBonus;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {

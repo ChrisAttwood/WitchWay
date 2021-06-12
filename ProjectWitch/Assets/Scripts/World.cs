@@ -19,7 +19,7 @@ public class World : MonoBehaviour
         instance = this;
         Blocks = new Dictionary<Vector2Int, Block>();
         int lastSpawnedTree = 0;
-        for (int y = -20; y < 250; y++)
+        for (int y = -20; y <= 250; y++)
         {
             for (int x = -13; x <= 13; x++)
             {
@@ -31,6 +31,10 @@ public class World : MonoBehaviour
 
 
 
+                }
+                else if(y == 250)
+                {
+                    AddBlock(new Vector2Int(x, y), Bad);
                 }
                 else
                 {
