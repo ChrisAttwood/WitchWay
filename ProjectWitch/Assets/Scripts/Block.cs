@@ -18,9 +18,9 @@ public class Block : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (IsBonus)
-        {
-            transform.Rotate(new Vector3(1f, 0f, 0f));
-        }
+        //if (IsBonus)
+        //{
+        //    transform.Rotate(new Vector3(1f, 0f, 0f));
+        //}
     }
 }

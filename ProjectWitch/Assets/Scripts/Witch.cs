@@ -22,7 +22,7 @@ public class Witch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target, 0.1f);
+        transform.position = Vector3.MoveTowards(transform.position, target, GameManager.instance.Speed());
 
         if (Vector3.Distance(transform.position, target) == 0f)
         {

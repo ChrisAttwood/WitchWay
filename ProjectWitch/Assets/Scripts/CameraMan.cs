@@ -9,7 +9,7 @@ public class CameraMan : MonoBehaviour
     public Transform WitchTwo;
    
 
-    float gameOverDistance = 7.5f;
+    float gameOverDistance = 9f;
 
     // Start is called before the first frame update
     void Start()
@@ -25,24 +25,7 @@ public class CameraMan : MonoBehaviour
 
 
 
-        //Vector3 pos = transform.position;
-
-        //pos.z += 0.01f;
-
-
-        //transform.position = pos;
-
-
-
-
-        //if (Vector3.Distance(average, WitchTwo.transform.position) > gameOverDistance)
-        //{
-        //    GameManager.instance.GameOver();
-        //}
-        //if (Vector3.Distance(average, WitchOne.transform.position) > gameOverDistance)
-        //{
-        //    GameManager.instance.GameOver();
-        //}
+     
 
 
         Vector3 average = (WitchOne.transform.position + WitchTwo.transform.position) / 2f;

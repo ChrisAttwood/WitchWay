@@ -8,8 +8,8 @@ public class World : MonoBehaviour
     public Dictionary<Vector2Int,Block> Blocks;
     public Block Rock;
     public Block Tree;
-    public Block Fire;
-    public Block Bonus;
+    public Block Bad;
+    public Block Good;
 
     public static World instance;
 
@@ -18,10 +18,12 @@ public class World : MonoBehaviour
     {
         instance = this;
         Blocks = new Dictionary<Vector2Int, Block>();
-        for(int x = -13; x <= 13; x++)
+        int lastSpawnedTree = 0;
+        for (int y = -20; y < 250; y++)
         {
-            for (int y = -20; y < 250; y++)
+            for (int x = -13; x <= 13; x++)
             {
+                lastSpawnedTree++;
                 Blocks[new Vector2Int(x, y)] = null;
                 if (x == 0 || x <= -10 || x >= 10)
                 {
@@ -32,19 +34,23 @@ public class World : MonoBehaviour
                 }
                 else
                 {
-                    if (y > 10)
+                    if (y > 5)
                     {
-                        if (Random.Range(0f, 1f) > 0.9f)
+                        if (Random.Range(0f, 1f) > 0.9f && lastSpawnedTree>1)
                         {
-                            AddBlock(new Vector2Int(x, y), Tree);
+                            {
+                                lastSpawnedTree = 0;
+                                AddBlock(new Vector2Int(x, y), Tree);
+                            }
+                           
                         }
                         else if (Random.Range(0f, 1f) > 0.98f)
                         {
-                            AddBlock(new Vector2Int(x, y), Fire);
+                            AddBlock(new Vector2Int(x, y), Bad);
                         }
                         else if (Random.Range(0f, 1f) > 0.95f)
                         {
-                            AddBlock(new Vector2Int(x, y), Bonus);
+                            AddBlock(new Vector2Int(x, y), Good);
                         }
                     }
                 }

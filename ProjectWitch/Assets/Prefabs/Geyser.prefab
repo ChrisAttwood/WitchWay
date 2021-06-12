@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3896433900812960428}
   - component: {fileID: 4105228067025264014}
+  - component: {fileID: 7388928148952398142}
+  - component: {fileID: 4360441884305302928}
   m_Layer: 0
   m_Name: Geyser
   m_TagString: Untagged
@@ -25,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6606456949250128633}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9, y: 0, z: 191}
+  m_LocalPosition: {x: 5, y: 0, z: 249}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1591169923885650555}
@@ -45,8 +47,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsPassable: 1
-  IsKiller: 1
-  IsBonus: 0
+  IsKiller: 0
+  IsBonus: 1
+--- !u!135 &7388928148952398142
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6606456949250128633}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4360441884305302928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6606456949250128633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fb13fa56d708804fbc39cd7206835b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BonusSound: {fileID: 8300000, guid: a2cc27d2035f35340bb47f699893f551, type: 3}
+  PickUpEffect: {fileID: 1907042062381694351, guid: 362dca8307f10e848b6e910eb222991c,
+    type: 3}
 --- !u!1001 &1491961601619419177
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -113,6 +143,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GeyserChild
+      objectReference: {fileID: 0}
+    - target: {fileID: 3829175635401922020, guid: 2d03c413a7efd194481e74c6a9e0583d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5080802594816486250, guid: 2d03c413a7efd194481e74c6a9e0583d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 363dfed6f1e252e41b0b2e681c1af7d3, type: 2}
+    - target: {fileID: 6352606044607130143, guid: 2d03c413a7efd194481e74c6a9e0583d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6555b1677d5a448499d27d3d00e6a553, type: 2}
+    - target: {fileID: 8465697890680418368, guid: 2d03c413a7efd194481e74c6a9e0583d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609001659597071131, guid: 2d03c413a7efd194481e74c6a9e0583d,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609001659597071131, guid: 2d03c413a7efd194481e74c6a9e0583d,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.959195
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609001659597071131, guid: 2d03c413a7efd194481e74c6a9e0583d,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609001659597071131, guid: 2d03c413a7efd194481e74c6a9e0583d,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d03c413a7efd194481e74c6a9e0583d, type: 3}

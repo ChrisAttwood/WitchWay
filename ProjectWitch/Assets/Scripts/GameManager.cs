@@ -5,11 +5,13 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject GameOverText;
+    public GameObject GameOverPanel;
     public static GameManager instance;
     public bool IsGameOver { get; private set; }
     public int Timer;
     public TMP_Text TimerText;
+    float speed;
+    
 
     private void Awake()
     {
@@ -20,14 +22,17 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameOverText.SetActive(false);
+        GameOverPanel.SetActive(false);
+        speed = 0.04f;
     }
 
     // Update is called once per frame
     void Update()
     {
+       
         if (!IsGameOver)
         {
+            speed += 0.00002f;
             Timer++;
             TimerText.text = (Timer/60).ToString();
         }
@@ -38,6 +43,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public float Speed()
+    {
+        return speed;
+    }
+
     public void AddScore(int amount)
     {
         Timer += amount;
@@ -46,6 +56,6 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         IsGameOver = true;
-        GameOverText.SetActive(true);
+        GameOverPanel.SetActive(true);
     }
 }
