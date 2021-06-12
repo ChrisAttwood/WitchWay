@@ -47,7 +47,7 @@ public class CameraMan : MonoBehaviour
 
         Vector3 average = (WitchOne.transform.position + WitchTwo.transform.position) / 2f;
 
-        transform.position = new Vector3(0f, 10f, average.z - 2f);
+        transform.position = new Vector3(0f, 10f, average.z - 5f);
 
 
 
