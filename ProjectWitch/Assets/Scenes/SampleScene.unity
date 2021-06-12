@@ -128,6 +128,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 24719946, guid: c44200bcb2abe644b8122f91b6d7a997, type: 3}
+      propertyPath: BurnTheWitch
+      value: 
+      objectReference: {fileID: 1357368180481883625, guid: 82c79fa0638fe2a4498fe051c35eca50,
+        type: 3}
     - target: {fileID: 1918429788235536686, guid: c44200bcb2abe644b8122f91b6d7a997,
         type: 3}
       propertyPath: m_Name
@@ -640,6 +645,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 24719946, guid: c44200bcb2abe644b8122f91b6d7a997, type: 3}
+      propertyPath: BurnTheWitch
+      value: 
+      objectReference: {fileID: 1357368180481883625, guid: 82c79fa0638fe2a4498fe051c35eca50,
+        type: 3}
     - target: {fileID: 893474711, guid: c44200bcb2abe644b8122f91b6d7a997, type: 3}
       propertyPath: m_RootOrder
       value: 10

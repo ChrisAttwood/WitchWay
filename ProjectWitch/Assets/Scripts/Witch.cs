@@ -10,7 +10,8 @@ public class Witch : MonoBehaviour
     Vector3Int current;
   //  Vector3Int direction;
     bool readyToMove;
-   // public AudioClip BonusSound;
+    // public AudioClip BonusSound;
+    public GameObject BurnTheWitch;
 
     // Start is called before the first frame update
     void Awake()
@@ -56,6 +57,8 @@ public class Witch : MonoBehaviour
 
         if(World.instance.Blocks.ContainsKey(new Vector2Int(target.x, target.z)) && World.instance.Blocks[new Vector2Int(target.x, target.z)] != null && World.instance.Blocks[new Vector2Int(target.x, target.z)].IsKiller)
         {
+            var burnTheWitch = Instantiate(BurnTheWitch, transform);
+            burnTheWitch.transform.localPosition = Vector3.zero;
             GameManager.instance.GameOver();
         }
 
