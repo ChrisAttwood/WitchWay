@@ -21,7 +21,7 @@ public class Witch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target, 0.01f);
+        transform.position = Vector3.MoveTowards(transform.position, target, 0.05f);
 
         if (Vector3.Distance(transform.position, target) == 0f)
         {
@@ -41,51 +41,59 @@ public class Witch : MonoBehaviour
 
         readyToMove = false;
         target.z += 1;
-        //  if (Mathf.Abs(Vertical) > Mathf.Abs(Horizontal) && Mathf.Abs(Vertical) >= Yvelocity)
+
+        if (Horizontal < 0)
         {
-            //if (Vertical < 0)
-            //{
-            //    target.z -= 1;
-            //}
-
-            //if (Vertical > 0)
-            //{
-            //    target.z += 2;
-            //}
+            target.x -= 1;
         }
-       // if (Mathf.Abs(Horizontal) > Mathf.Abs(Vertical) && Mathf.Abs(Horizontal) >= Xvelocity)
+
+        if (Horizontal > 0)
         {
-
-            if (Horizontal < 0)
-            {
-                target.x -= 1;
-            }
-
-            if (Horizontal > 0)
-            {
-                target.x += 1;
-            }
+            target.x += 1;
         }
+        
 
         if(World.instance.Blocks.ContainsKey(new Vector2Int(target.x, target.z)) && World.instance.Blocks[new Vector2Int(target.x, target.z)] != null && World.instance.Blocks[new Vector2Int(target.x, target.z)].IsKiller)
         {
             GameManager.instance.GameOver();
         }
 
-        //Yvelocity = Mathf.Abs(Vertical);
-        //Xvelocity = Mathf.Abs(Horizontal);
-        // direction = target - current;
         if (!World.instance.Blocks.ContainsKey(new Vector2Int(target.x, target.z)) || (World.instance.Blocks[new Vector2Int(target.x, target.z)] != null && !World.instance.Blocks[new Vector2Int(target.x, target.z)].IsPassable))
         {
+
+
+            //if (target.x != 0)
+            //{
+            //    target.x = 1;
+            //}
+
+
             target = current;
+
+
+            //if(target.z== current.z)
+            //{
+            //    
+            //}
+
+            target.z += 1;
+
+
+            // target.x = 0;
+            if (!World.instance.Blocks.ContainsKey(new Vector2Int(target.x, target.z)) || (World.instance.Blocks[new Vector2Int(target.x, target.z)] != null && !World.instance.Blocks[new Vector2Int(target.x, target.z)].IsPassable))
+            {
+                target = current;
+            }
         }
 
-        //if (!World.instance.Blocks.ContainsKey(new Vector2Int(target.x, target.z)) || (World.instance.Blocks[new Vector2Int(target.x, target.z)] != null  &&  !World.instance.Blocks[new Vector2Int(target.x, target.z)].IsPassable) || Vector3.Distance(transform.position, target) > 1f)
+
+
+        //if (!World.instance.Blocks.ContainsKey(new Vector2Int(target.x, target.z)) || (World.instance.Blocks[new Vector2Int(target.x, target.z)] != null && !World.instance.Blocks[new Vector2Int(target.x, target.z)].IsPassable))
         //{
-        //    target = current;
-
-
+           
         //}
+
+
 
 
     }

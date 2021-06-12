@@ -6,6 +6,7 @@ public class World : MonoBehaviour
 {
 
     public Dictionary<Vector2Int,Block> Blocks;
+    public Block Rock;
     public Block Tree;
     public Block Fire;
 
@@ -23,18 +24,27 @@ public class World : MonoBehaviour
                 Blocks[new Vector2Int(x, y)] = null;
                 if (x == 0 || x == -10 || x == 10)
                 {
-                    AddBlock(new Vector2Int(x, y),Tree);
+                    AddBlock(new Vector2Int(x, y), Rock);
 
-                   
 
-                }else if (Random.Range(0f, 1f) > 0.9f)
-                {
-                    AddBlock(new Vector2Int(x, y), Tree);
+
                 }
-                else if (Random.Range(0f, 1f) > 0.98f)
+                else
                 {
-                    AddBlock(new Vector2Int(x, y),Fire);
+                    if (y > 10)
+                    {
+                        if (Random.Range(0f, 1f) > 0.9f)
+                        {
+                            AddBlock(new Vector2Int(x, y), Tree);
+                        }
+                        else if (Random.Range(0f, 1f) > 0.98f)
+                        {
+                            AddBlock(new Vector2Int(x, y), Fire);
+                        }
+                    }
                 }
+
+                
             }
 
             
